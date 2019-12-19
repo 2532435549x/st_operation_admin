@@ -1,0 +1,42 @@
+/*
+ * @Description: Routing module @userManagementRouter
+ * @Author: wangyun
+ * @Date: 2019-08-07 15:16:05
+ * @LastEditTime: 2019-11-16 14:45:53
+ */
+
+// import Layout from '@/layout/Layout'
+
+// const userManagementRouter = {
+//   path: '/userManage',
+//   name: 'UserManage',
+//   component: Layout,
+//   redirect: 'userManage/userManage-list',
+//   meta: {
+//     title: '钱包用户',
+//     icon: 'user'
+//   },
+//   children: [
+//     {
+//       path: 'userManage-list',
+//       name: 'UserManage-list',
+//       component: () => import('@/views/userManage/list'),
+//       meta: {
+//         title: '钱包用户管理'
+//       },
+//     },
+
+//     {
+//       path: 'userManage-detail',
+//       name: 'UserManage-detail',
+//       component: () => import('@/views/userManage/detail'),
+//       meta: {
+//         title: '钱包用户详情',
+//         isHidden: true
+//       },
+//       hidden: true
+//     }
+//   ]
+// }
+
+// export default userManagementRouter

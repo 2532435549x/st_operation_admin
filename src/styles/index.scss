@@ -1,0 +1,517 @@
+@import "./variables.scss";
+@import "./mixin.scss";
+@import "./transition.scss";
+@import "./element-ui.scss";
+@import "./sidebar.scss";
+
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
+    Microsoft YaHei, Arial, sans-serif;
+}
+
+label {
+  font-weight: 700;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+    "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei",
+    sans-serif;
+}
+
+#app {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  outline: none;
+  text-decoration: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+//main-container全局样式
+.app-main {
+  min-height: 100%;
+}
+
+.app-container {
+  padding: 20px;
+}
+
+.app-container-flex {
+  display: flex;
+  padding: 20px;
+}
+
+// .filter-container {
+// }
+
+.demo-form-inline {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.pageQury {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.info {
+  color: gray;
+}
+
+hr {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.1);
+  transform: scaleY(0.5);
+  border: none;
+}
+
+.tableInfo i {
+  color: #909399;
+  cursor: pointer;
+}
+
+.tableInfoBox {
+  overflow: auto;
+}
+
+.tableInfoBox img {
+  width: 100%;
+}
+
+// 处理input[type="number"] 类型的固有样式
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+}
+.numInput {
+  input[type="number"] {
+    -moz-appearance: textfield;
+    text-align: center;
+  }
+}
+
+// 自定义移动设备优先的响应式样式
+.st-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+@media only screen and (min-width: 576px) {
+  .st-container {
+    max-width: 540px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .st-container {
+    max-width: 720px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .st-container {
+    max-width: 960px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .st-container {
+    max-width: 1140px;
+  }
+}
+
+.st-container-fluid {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.pointDiv {
+  cursor: pointer;
+}
+
+.activeLink {
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: $-theme;
+  }
+}
+
+.page-header {
+  margin-bottom: 26px;
+  font-weight: 600;
+}
+
+.title-h4 {
+  margin-bottom: 12px;
+}
+
+// circle 模块
+.loading-container {
+  padding: 50px 0;
+}
+
+.st-fadeIn2 {
+  @include fadeIn2(0.3);
+}
+
+.panel-page {
+  text-align: right;
+  padding: 0 40px;
+}
+
+.emptyImg {
+  color: #c0c4cc;
+  background: #f5f7fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &-big {
+    width: 160px;
+    height: 160px;
+    font-size: 14px;
+  }
+  &-small {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 12px;
+  }
+}
+
+.emptyData {
+  padding-top: 45px;
+  padding-bottom: 15px;
+  text-align: center;
+  img {
+    width: 120px;
+  }
+  p {
+    font-size: 14px;
+    color: #bbc2cf;
+  }
+}
+
+// 圈子帖子主体模块
+.col-post-body {
+  .body-content {
+    position: relative;
+    margin: 25px 0;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: #f6faff;
+    .picfirst {
+      width: 160px;
+      height: 160px;
+    }
+    .hastop-fixed {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 10;
+      img {
+        display: block;
+        width: 35px;
+      }
+    }
+    .information {
+      max-width: calc(100% - 160px);
+      padding: 0 45px 0 10px;
+      font-size: 14px;
+      section {
+        line-height: 18px;
+        text-indent: 2em;
+        text-align: justify;
+        
+        @include multi-ellipsis(4);
+      }
+
+      &-bottom {
+        margin-top: 15px;
+        display: inline-flex;
+        align-items: center;
+        .info-avatar {
+          position: relative;
+          em {
+            position: absolute;
+            top: 0;
+            right: 2px;
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: red;
+          }
+        }
+
+        .info-specific {
+          p:last-child {
+            margin-top: 8px;
+          }
+        }
+
+        span {
+          display: inline-block;
+          vertical-align: middle;
+          color: $createTime;
+          margin-right: 8px;
+          &.customerNick {
+            max-width: 200px;
+            color: $customerNick;
+            font-weight: bold;
+            @extend %ellipsis;
+          }
+        }
+        b {
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+
+  .body-content-fixed {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    box-sizing: content-box;
+    padding: 150px 0;
+    opacity: 0;
+    li {
+      margin: 0 5px;
+      padding: 20px;
+      border-radius: 6px;
+      list-style: none;
+      color: #fff;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      transition: background 0.3s ease;
+      cursor: pointer;
+      span {
+        margin-top: 5px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .body-content-fixed li:hover {
+    background: $-theme;
+  }
+
+  .body-content:hover {
+    .body-content-fixed {
+      @include fadeIn;
+    }
+  }
+}
+
+// 圈子评论主体模块
+.col-comment-body {
+  .body-content {
+    position: relative;
+    margin-top: 20px;
+    height: 130px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    .information {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      &-left {
+        padding-right: 5px;
+        position: relative;
+        em {
+          position: absolute;
+          top: 0;
+          right: 0;
+          display: inline-block;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: red;
+        }
+      }
+      &-right {
+        width: calc(100% - 55px);
+        font-size: 14px;
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        &-info {
+          span {
+            color: $createTime;
+            margin-right: 5px;
+          }
+          b {
+            margin-right: 5px;
+          }
+        }
+        .customerNick {
+          font-weight: bold;
+          color: $customerNick;
+          margin-bottom: 5px;
+        }
+        .brief {
+          font-size: 14px;
+          .commentcut {
+            width: 100%;
+            margin: 5px 0;
+            line-height: 18px;
+            text-indent: 2em;
+            text-align: justify;
+            @include multi-ellipsis(2);
+          }
+          .postcut {
+            padding: 8px;
+            padding-left: 1em;
+            color: #464748;
+            background: #ebeaea;
+            border-radius: 2px;
+            border: 1px solid #ccc;
+            @extend %ellipsis;
+          }
+        }
+      }
+    }
+  }
+
+  .body-content-fixed {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    box-sizing: content-box;
+    padding: 100px 0;
+    opacity: 0;
+    li {
+      margin: 0 5px;
+      padding: 20px;
+      border-radius: 6px;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      list-style: none;
+      color: #fff;
+      transition: background 0.3s ease;
+      cursor: pointer;
+      span {
+        margin-top: 5px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .body-content-fixed li:hover {
+    background: $-theme;
+  }
+
+  .body-content:hover {
+    .body-content-fixed {
+      @include fadeIn;
+    }
+  }
+}

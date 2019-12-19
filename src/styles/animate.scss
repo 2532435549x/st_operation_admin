@@ -1,0 +1,42 @@
+// 动画总
+@mixin animated($sec: 1) {
+  animation-duration: $sec + s;
+  animation-fill-mode: both;
+  animation-timing-function: ease;
+}
+
+@mixin fadeIn($sec: 0.3) {
+  @include animated($sec);
+  animation-name: fadeIn;
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-55%);
+      -webkit-transform: translateY(-55%);
+      -moz-transform: translateY(-55%);
+      -ms-transform: translateY(-55%);
+      -o-transform: translateY(-55%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+    }
+  }
+}
+
+@mixin fadeIn2($sec: 1) {
+  @include animated($sec);
+  animation-name: fadeIn2;
+  @keyframes fadeIn2 {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}

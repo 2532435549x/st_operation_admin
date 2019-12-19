@@ -1,0 +1,83 @@
+//to reset element-ui default css
+.el-upload {
+  input[type="file"] {
+    display: none !important;
+  }
+}
+
+.el-upload__input {
+  display: none;
+}
+
+//暂时性解决diolag 问题 https://github.com/ElemeFE/element/issues/2461
+.el-dialog {
+  transform: none;
+  left: 0;
+  position: relative;
+  margin: 0 auto;
+}
+
+//element ui upload
+.upload-container {
+  .el-upload {
+    width: 100%;
+    .el-upload-dragger {
+      width: 100%;
+      height: 200px;
+    }
+  }
+}
+
+.el-dropdown-link {
+  cursor: pointer;
+  color: #409eff;
+}
+
+// 去除鼠标双击文本区域导致背景色变蓝的问题
+.el-menu {
+  user-select: none;
+  -moz-user-select: none; /*火狐*/
+  -webkit-user-select: none; /*webkit浏览器*/
+  -ms-user-select: none; /*IE10*/
+  -khtml-user-select: none; /*早期浏览器*/
+}
+
+.el-collapse-item__header {
+  font-weight: bold;
+  color: #3a8ee6;
+}
+
+.avatar-uploader-icon {
+  border-radius: 5px;
+  border: 1px dashed rgba(0, 0, 0, 0.1);
+}
+
+.avatar-uploader-icon:hover {
+  border-color: #409eff;
+}
+
+.avatar-uploader .el-upload {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.el-image-viewer__close {
+  color: #000;
+}
+
+.el-dialog {
+  // width: 45%;
+}
+
+.demo-table-expand {
+  font-size: 0;
+}
+
+.demo-table-expand label {
+  color: #99a9bf;
+}
+
+.el-divider--horizontal{
+  width: 50%;
+}
